@@ -86,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
     }else if (Platform.isAndroid){
       String url = 'http://3g.163.com/links/4636'; // 网易新闻下载地址，地址可能失效，在测试时候可以先确认下下载地址是否是有效的
       try {
-        // destinationFilename 是对下载的apk进行重命名
+        // destinationFilename 是对下载的apk进行重命名,可以自己定义
         OtaUpdate().execute(url, destinationFilename: 'news.apk').listen(
               (OtaEvent event) {
             print('status:${event.status},value:${event.value}');
