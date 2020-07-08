@@ -84,9 +84,10 @@ class _MyHomePageState extends State<MyHomePage> {
         throw 'Could not launch $url';
       }
     }else if (Platform.isAndroid){
-      String url = 'http://x2.c1578dn.cn/v13/hll/iReader.apk';
+      String url = 'http://3g.163.com/links/4636'; // 网易新闻下载地址，地址可能失效，在测试时候可以先确认下下载地址是否是有效的
       try {
-        OtaUpdate().execute(url).listen(
+        // destinationFilename 是对下载的apk进行重命名
+        OtaUpdate().execute(url, destinationFilename: 'news.apk').listen(
               (OtaEvent event) {
             print('status:${event.status},value:${event.value}');
             switch(event.status){
